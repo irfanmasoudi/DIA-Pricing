@@ -8,4 +8,5 @@ class Environment():
 
     def round(self, pulled_arm): #model the interaction between learner and environment -> this function use the chosen arm (pulled arm) as input
         reward = np.random.binomial(1, self.probabilities[pulled_arm]) # 1 mean bernauli dist and the succes prob related to the super arm that specified in the constructor
+                                    #number of trial and prob of success
         return reward
