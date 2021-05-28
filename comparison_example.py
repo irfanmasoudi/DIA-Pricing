@@ -6,13 +6,13 @@ from Greedy_Learner import Greedy_Learner
 
 
 if __name__ == '__main__':
-    p = np.array([0.9, 0.3, 0.1, 0.35]) #bernauli distribution for the reward function
+    p = np.array([0.4, 0.3, 0.1, 0.35]) #bernauli distribution for the reward function
     n_arms = len(p)
     opt = np.max(p)
 
     T = 300
 
-    n_experiments = 1000
+    n_experiments = 100
     ts_rewards_per_experiment = []
     ts_rewards_per_arm = []
     gr_rewards_per_experiment = []

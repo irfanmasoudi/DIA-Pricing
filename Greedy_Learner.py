@@ -1,6 +1,7 @@
 from Learner import Learner
 import numpy as np
 
+#if there is better choice then directly put as the choosen one. which is not consider another better possibilitis
 
 class Greedy_Learner(Learner):
     def __init__(self, n_arms):
