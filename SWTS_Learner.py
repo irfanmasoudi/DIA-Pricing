@@ -13,7 +13,7 @@ class SWTS_Learner(TS_Learner):
         self.update_observations(pulled_arm, reward)
         self.pulled_arms = np.append(self.pulled_arms, pulled_arm)
         for arm in range(self.n_arms):
-            n_samples = np.sum(self.pulled_arms[-self.window_size:] == arm)
-            cum_rew = np.sum(self.rewards_per_arm[arm][-n_samples:]) if n_samples > 0 else 0
+            n_samples = np.sum(self.pulled_arms[-self.window_size:] == arm) #count the number of time we actually pulled arm that we are updating
+            cum_rew = np.sum(self.rewards_per_arm[arm][-n_samples:]) if n_samples > 0 else 0 #if we pulled already arm for some sample the cum rew will be sum of reward over the window 
             self.beta_parameters[arm, 0] = cum_rew + 1.0
             self.beta_parameters[arm, 1] = n_samples - cum_rew + 1.0

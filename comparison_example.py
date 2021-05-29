@@ -5,14 +5,16 @@ from TS_Learner import TS_Learner
 from Greedy_Learner import Greedy_Learner
 
 
+
+
 if __name__ == '__main__':
-    p = np.array([0.4, 0.3, 0.1, 0.35]) #bernauli distribution for the reward function
+    p = np.array([0.15, 0.1, 0.1, 0.9]) #bernauli distribution for the reward function
     n_arms = len(p)
     opt = np.max(p)
 
     T = 300
 
-    n_experiments = 100
+    n_experiments = 1000
     ts_rewards_per_experiment = []
     ts_rewards_per_arm = []
     gr_rewards_per_experiment = []
@@ -38,9 +40,21 @@ if __name__ == '__main__':
     
 
     plt.figure(0)
+    plt.ylabel("Reward")
+    plt.xlabel("t")
+    plt.plot(np.mean(ts_rewards_per_experiment, axis=0), 'r')
+    plt.plot(np.mean(gr_rewards_per_experiment, axis=0), 'b')
+    plt.plot(opt, '--k')
+    plt.legend(["TS", "greedy", "Optimum"])
+    plt.show()
+
+    plt.figure(1)
     plt.ylabel("Regret")
     plt.xlabel("t")
     plt.plot(np.cumsum(np.mean(opt - ts_rewards_per_experiment, axis=0)), 'r')
     plt.plot(np.cumsum(np.mean(opt - gr_rewards_per_experiment, axis=0)), 'g')
     plt.legend(["TS", "Greedy"])
     plt.show()
+
+
+  

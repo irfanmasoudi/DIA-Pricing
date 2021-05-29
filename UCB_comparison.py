@@ -10,7 +10,7 @@ if __name__ == '__main__':
     n_arms = len(p)
     opt = np.max(p)
 
-    T = 300
+    T = 3000
 
     n_experiments = 1000
     ts_rewards_per_experiment = []

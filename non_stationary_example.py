@@ -5,11 +5,11 @@ from TS_Learner import TS_Learner
 from SWTS_Learner import SWTS_Learner
 
 
-n_arms = 4
-p = np.array([[0.15, 0.1, 0.2, 0.35],
-              [0.45, 0.21, 0.2, 0.35],
-              [0.1, 0.1, 0.5, 0.15],
-              [0.1, 0.21, 0.1, 0.15]])
+n_arms = 4 
+p = np.array([[0.15, 0.1, 0.2, 0.35], #phase 1
+              [0.45, 0.21, 0.2, 0.35], #phase 2
+              [0.1, 0.1, 0.5, 0.15], #phase 3
+              [0.1, 0.21, 0.1, 0.15]]) #phase 4
 # p is a matrix (n_phases, n_arms)
 T = 500
 
